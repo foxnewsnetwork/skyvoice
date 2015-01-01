@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 gem 'paperclip', '~> 4.2.0'
 gem 'paranoia', '~> 2.0.2'
 gem 'god', '~> 0.13.4'
-gem 'arrows', '~> 0.0.11'
+gem 'arrows', '~> 0.0.12'
 gem 'whenever', '~> 0.9.4', require: false
 gem "haml", "~> 4.0.0"
 gem "haml-rails", "~>0.4"
