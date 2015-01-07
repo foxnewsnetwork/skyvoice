@@ -1,0 +1,22 @@
+!!!5
+/ [if lt IE 7 ]
+  %html.ie.ie6{ lang: I18n.locale }
+/ [if IE 7 ]
+  %html.ie.ie7{ lang: I18n.locale }
+/ [if IE 8 ]
+  %html.ie.ie8{ lang: I18n.locale }
+/ [if IE 9 ]
+  %html.ie.ie9{ lang: I18n.locale }
+/ [if gt IE 9]
+  %html{ lang: I18n.locale }
+
+%head
+  %meta{ :charset => "utf-8" }
+  %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+  %title Skyvoice Karaoke
+  = csrf_meta_tags
+  = stylesheet_link_tag 'application', media: 'all', async: true
+  = javascript_include_tag "application"
+
+%body#apiv1
+  = yield

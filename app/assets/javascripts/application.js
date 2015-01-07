@@ -12,15 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require jquery
+//= require jquery-ui/effect.all
+//= require jquery-ui/effect
+//= require video-js/video
+//= require underscore
 //= require handlebars
+//= require modernizr
 //= require ember
 //= require ember-data
+//= require socket.io
+//= require ./apiv1
 //= require_self
-//= require ./skyvoice
 
-// for more details see: http://emberjs.com/guides/application/
-Skyvoice = Ember.Application.create();
-
-//= require_tree .
+videojs.options.flash.swf = "/assets/video-js.swf"

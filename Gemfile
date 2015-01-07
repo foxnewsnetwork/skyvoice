@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -22,14 +22,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'compass-rails', '~> 2.0.1'
 gem 'jquery-ui-rails', '>=5.0.2'
-gem 'ember-rails'
-gem 'ember-source', '~> 1.9.0' # or the version you need
+gem 'ember-rails', '~>0.15'
+gem 'ember-source', '~> 1.7.0'
 gem 'emblem-rails', '~>0.2.1'
 gem 'ember_script-rails' #, :github => 'ghempton/ember-script-rails'
 gem 'livescript-rails', '~> 1.1.0'
 gem 'underscore-rails'
 gem 'font-awesome-sass-rails', '~> 3.0.2.2'
 gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'modernizr-rails', '~> 2.7.1'
+gem 'socket.io-rails', '~> 1.2.1'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -50,6 +53,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
 
 group :development, :test do
   gem 'did_you_mean'
