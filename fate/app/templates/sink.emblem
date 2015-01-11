@@ -1,0 +1,6 @@
+h4 stream sink
+
+video-proxy stream=stream
+
+button click="receiveStream"
+  span receive stream

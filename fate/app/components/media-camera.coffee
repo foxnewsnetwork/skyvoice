@@ -9,10 +9,10 @@ MediaCameraComponent = Ember.Component.extend
     navigator.getUserMedia @contraints, _.bind(@handleStream, @), _.bind(@handleFailure, @)
 
   handleStream: (stream) ->
-    @set "source", window.URL.createObjectURL stream
+    @set "stream", stream
   
   handleFailure: (reason) ->
     console.log reason
-    alert reason
+    alert JSON.stringify reason
 
 `export default MediaCameraComponent`

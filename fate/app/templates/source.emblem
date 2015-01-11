@@ -1,0 +1,7 @@
+h4 stream source
+
+media-camera stream=stream
+
+stream-launcher stream=stream
+
+video-proxy stream=stream

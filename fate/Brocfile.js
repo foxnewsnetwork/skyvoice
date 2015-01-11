@@ -35,6 +35,12 @@ app.import("bower_components/underscore/underscore.js",{
     "underscore": ["_"]
   }
 });
+app.import("bower_components/socket.io-client/socket.io.js", {
+  exports: {
+    "io": ["io"]
+  }
+});
+app.import("bower_components/adapter.js/samples/web/js/adapter.js");
 app.import("bower_components/fontawesome/css/font-awesome.css");
 app.import("bower_components/fontawesome/fonts/fontawesome-webfont.eot", { destDir: "fonts" });
 app.import("bower_components/fontawesome/fonts/fontawesome-webfont.svg", { destDir: "fonts" });

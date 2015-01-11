@@ -1,8 +1,11 @@
-`import funEx from 'fate/utils/fun-ex'`
+`import FunEx from 'fate/utils/fun-ex'`
 
-module 'funEx'
+module 'FunEx'
 
 # Replace this with your real tests.
 test 'it works', ->
-  result = funEx()
+  result = FunEx
   ok result
+
+test 'computed ok', ->
+  ok FunEx.computed

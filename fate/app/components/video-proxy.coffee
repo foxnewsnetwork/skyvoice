@@ -8,8 +8,12 @@ VideoProxyComponent = Ember.Component.extend
   didInsertElement: ->
     @manageSource()
 
-  manageSource: FunEx.observed "source", ->
-    return if Ember.isBlank @get "source"
+  src: FunEx.computed "stream", ->
+    return if Ember.isBlank @get "stream"
+    window.URL.createObjectURL @get "stream"
+    
+  manageSource: FunEx.observed "src", ->
+    return if Ember.isBlank @get "src"
     @set "videoPlayer", videojs @$()[0]
     @get("videoPlayer").play()
 
