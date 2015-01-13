@@ -14,7 +14,7 @@ VideoProxyComponent = Ember.Component.extend
     
   manageSource: FunEx.observed "src", ->
     return if Ember.isBlank @get "src"
-    @set "videoPlayer", videojs @$()[0]
+    @set "videoPlayer", videojs @$()[0], width: "100%", height: "315"
     @get("videoPlayer").play()
 
 `export default VideoProxyComponent`

@@ -1,0 +1,30 @@
+.hero-splash {
+  background: #111;
+  font-family: 'Poiret One', cursive;
+  color: #ccc;
+  .major-splash::before {
+    background: {
+      image: url("stage.jpg");
+      repeat: no-repeat;
+      size: cover;
+    }
+    &.fallback {
+      @include opacity(0.15);
+    }
+    @include filter(brightness(25%) blur(10px));
+    @include opacity(0.9);
+    min-height: 925px;
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    content: " ";
+  }
+  .major-splash {
+    min-height: 925px;
+    position: relative;
+    @include display-flex;
+    @include flex-direction(column);
+    @include justify-content(center);
+  }
+}

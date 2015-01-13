@@ -1,3 +1,40 @@
+@import "frameworks";
+@import "components";
+@import "templates";
+
 html, body {
-  margin: 20px;
+  background: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#application-container {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  @include display-flex;
+  @include flex-direction(column);
+  @include justify-content(space-between);
+}
+
+#body {
+  width: 100%;
+  background: {
+    color: #252525;
+  }
+}
+#footer {
+  width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  color: #888;
+  background: {
+    color: #212121;
+  }
+  .footer-title {
+    text-align: center;
+  }
+  .footer-link {
+    color: #999;
+  }
 }

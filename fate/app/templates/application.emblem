@@ -1,0 +1,16 @@
+#application-header
+  site-nav
+
+#application-container
+  #body
+    == outlet
+
+  #footer
+    .container
+      .row
+        .col-xs-12
+          h2.footer-title
+            span.capitalize Open Karaoke Organization
+            span  | 
+            a.footer-link href="https://github.com/foxnewsnetwork/skyvoice"
+              span.prespace github
