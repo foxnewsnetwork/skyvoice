@@ -1,1 +1,52 @@
-h1 rooms index
+#templates-room-show
+  .container-fluid
+    .row
+      .col-lg-10.col-md-9.col-sm-12.col-xs-12
+        .no-video-loaded
+      .col-lg-2.col-md-3.hidden-sm.hidden-xs.left-divider
+        .players-and-song-queue
+          .queue-section
+            form submit="queueSong"
+              label.sr-only for="queue"
+                span queue song
+              .input-group
+                .input-group-btn
+                == input type="text" class="form-control" placeholder="http://youtu.be/ZSS5dEeMX64"
+                .input-group-btn
+                  button.btn.btn-success type="submit"
+                    i.fa.fa-play
+          
+          .song-in-queue
+            .song.now-playing
+              i.fa.fa-play
+              i.fa.fa-music
+              span.prespace Be a Man
+              span.predash Mulan
+              span.click-to-kill
+                i.fa.fa-ban
+            .song
+              i.fa.fa-music
+              span.prespace Rap God
+              span.predash Eminem
+              span.click-to-kill
+                i.fa.fa-ban
+
+          .people-in-room
+            .person
+              i.fa.fa-user
+              span.prespace xXxSSJ4VegetaxXx
+              span.click-to-listen
+                i.fa.fa-headphones
+                span.prespace 42
+            .person
+              i.fa.fa-user
+              span.prespace foxnewsnetwork
+              span.click-to-listen
+                i.fa.fa-headphones
+                span.prespace 1
+            .person
+              i.fa.fa-user
+              span.prespace Taylor Swift
+              span.click-to-listen
+                i.fa.fa-headphones
+                span.prespace 6,422,123

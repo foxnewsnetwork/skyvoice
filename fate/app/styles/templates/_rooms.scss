@@ -2,9 +2,9 @@
   margin-top: 10rem;
   background-color: #252525;
   font-family: 'Courgette', cursive;
-  color: #eee;
 
   .room-card {
+    color: #eee;
     min-height: 175px;
     margin-bottom: 30px;
     @include display-flex;
