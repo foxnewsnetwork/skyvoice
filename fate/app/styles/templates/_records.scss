@@ -1,0 +1,22 @@
+#templates-records-index {
+  margin-top: 10rem;
+  background-color: #252525;
+
+  .record-results-thead {
+    font-family: 'Courgette', cursive;
+    color: #ddd;
+    margin-top: 3rem;
+  }
+  .table-header {
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #aaa;
+  }
+  .record-results-tbody {
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #ddd;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

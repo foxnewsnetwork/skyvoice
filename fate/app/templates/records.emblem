@@ -1,0 +1,51 @@
+#templates-records-index
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-md-push-3.col-lg-push-3
+        form submit="search"
+          label.sr-only for="search"
+            span search records
+          .input-group
+            .input-group-btn
+              button.btn.btn-success type="submit"
+                i.fa.fa-search
+            == input type="text" class="form-control" placeholder="search"
+            .input-group-btn
+              button.btn.btn-success type="submit"
+                span.prespace search
+
+    .row.record-results-thead
+      .col-xs-6.col-sm-4.col-md-2.col-lg-3
+        h3.table-header singer
+      .col-md-1.col-lg-1.hidden-xs.hidden-sm
+        h3.table-header room
+      .col-xs-6.col-sm-8.col-md-4.col-lg-5
+        h3.table-header title
+      .col-lg-2.col-md-3.hidden-xs.hidden-sm
+        h3.table-header artist
+      .col-lg-1.col-md-2.hidden-xs.hidden-sm
+        h3.table-header date
+
+    .row.record-results-tbody
+      .col-xs-6.col-sm-4.col-md-2.col-lg-3
+        span.info foxnewsnetwork
+      .col-md-1.col-lg-1.hidden-xs.hidden-sm
+        span.info 4chan/a/
+      .col-xs-6.col-sm-8.col-md-4.col-lg-5
+        span.info Soldiers
+      .col-lg-2.col-md-3.hidden-xs.hidden-sm
+        span.info Lia
+      .col-lg-1.col-md-2.hidden-xs.hidden-sm
+        span.info 1/14/15
+
+    .row.record-results-tbody
+      .col-xs-6.col-sm-4.col-md-2.col-lg-3
+        span.info Taylor Swift
+      .col-md-1.col-lg-1.hidden-xs.hidden-sm
+        span.info taytay
+      .col-xs-6.col-sm-8.col-md-4.col-lg-5
+        span.info Some Taylor Swift Song
+      .col-lg-2.col-md-3.hidden-xs.hidden-sm
+        span.info Taylor Swift
+      .col-lg-1.col-md-2.hidden-xs.hidden-sm
+        span.info 1/14/15
