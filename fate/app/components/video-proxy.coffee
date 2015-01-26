@@ -13,6 +13,7 @@ VideoProxyComponent = Ember.Component.extend
 
   src: FunEx.computed "stream", ->
     return if Ember.isBlank @get "stream"
+    return if @get "stream.ended"
     window.URL.createObjectURL @get "stream"
     
   manageSource: FunEx.observed "src", ->

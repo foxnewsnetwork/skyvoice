@@ -24,6 +24,14 @@ var app = new EmberApp({
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
 app.import('bower_components/bootstrap/dist/css/bootstrap.css.map', { destDir: "assets" });
 app.import('bower_components/jquery/dist/jquery.js');
+app.import('bower_components/jquery-ui/ui/effect.js');
+app.import('bower_components/jquery-ui/ui/effect-puff.js');
+app.import('bower_components/jquery-ui/ui/effect-explode.js');
+app.import("vendor/youtube/iframe-api.js", {
+  exports: {
+    "YT": ["YT"]
+  }
+});
 app.import('vendor/video-js/video.js', {
   exports: {
     "videojs": ["videojs"]

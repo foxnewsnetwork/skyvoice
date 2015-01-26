@@ -26,7 +26,13 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.contentSecurityPolicy = {
-      "connect-src": "ws://localhost:4200"
+      "connect-src": "ws://localhost:4200",
+      "img-src": "'self' http://192.168.0.101",
+      "media-src": "'self' http://localhost:*",
+      "font-src": "http://fonts.gstatic.com 'self'",
+      "style-src": "'self' http://fonts.googleapis.com",
+      "script-src": "'self' https://s.ytimg.com",
+      "frame-src": "'self' https://www.youtube.com"
     };
   }
 

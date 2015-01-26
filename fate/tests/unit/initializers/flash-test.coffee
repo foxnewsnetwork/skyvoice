@@ -1,10 +1,10 @@
 `import Ember from 'ember'`
-`import { initialize } from 'fate/initializers/remote-connection'`
+`import { initialize } from 'fate/initializers/flash'`
 
 container = null
 application = null
 
-module 'RemoteConnectionInitializer',
+module 'FlashInitializer',
   setup: ->
     Ember.run ->
       application = Ember.Application.create()

@@ -1,0 +1,6 @@
+.message
+  i.fa class=iconClass
+  span.prespace= flashContent
+.action.pointer click="dismiss"
+  .dismiss
+    i.fa.fa-times

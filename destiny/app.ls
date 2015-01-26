@@ -40,24 +40,38 @@ process.on 'SIGINT', shutdown
 process.on 'SIGQUIT', shutdown
 ##
 
+attemptEmission = (socket) ->
+  if socket.presentRoom
+    socket.to(socket.presentRoom).emit
+  else
+    -> socket.emit "from-server:message", "you're not in a room, buddy"
+
 app.get '/', (req, res) ->
   res.sendFile __dirname + '/views/index.jade'
 
+class SuperDuperIOMessage
+  _internal-count = 0
+  @count = -> _internal-count += 1
+
 (socket) <- io.on "connection"
-socket.on "sanity", (msg) ->
-  scket.broadcast.emit "sanity", { msg: "returning: #{msg}" }
+socket.on "data", (slug) ->
+  slug.header._iotimestamp = SuperDuperIOMessage.count!
+  if slug.header and slug.header.room
+    socket.to(slug.header.room).emit "data", slug
+  else
+    socket.broadcast.emit "data", slug
 
 socket.on "from-client:candidate", (candidate) ->
   console.log "candidate"
   console.log candidate
-  socket.broadcast.emit "from-server:candidate", candidate
+  attemptEmission(socket) "from-server:candidate", candidate
 
 socket.on "from-client:offer", (offer) ->
   console.log "offer"
   console.log offer
-  socket.broadcast.emit "from-server:offer", offer
+  attemptEmission(socket) "from-server:offer", offer
 
 socket.on "from-client:answer", (answer) ->
   console.log "answer"
   console.log answer
-  socket.broadcast.emit "from-server:answer", answer
+  attemptEmission(socket) "from-server:answer", answer

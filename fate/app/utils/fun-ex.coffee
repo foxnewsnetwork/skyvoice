@@ -10,4 +10,8 @@ class FunEx
     [fields..., fun] = arguments
     fun.observes.apply fun, fields
 
+  @isBlank = Ember.isBlank
+
+  @isPresent = (x) -> not Ember.isBlank x
+
 `export default FunEx`

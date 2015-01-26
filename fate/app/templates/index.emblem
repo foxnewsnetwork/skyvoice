@@ -43,7 +43,7 @@
           span.prespace join a room
         p.instructions find your favorite theme room
       .col-lg-6.col-md-6.col-sm-12.col-xs-12
-        img.thumbnail.section-sample src="assets/malamute.jpg"
+        img.thumbnail.section-sample src="http://192.168.0.101/video.cgi"
 
     .row.howto-section
       .col-lg-6.col-md-6.col-sm-12.col-xs-12

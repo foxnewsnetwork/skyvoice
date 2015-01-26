@@ -14,3 +14,5 @@
             span  | 
             a.footer-link href="https://github.com/foxnewsnetwork/skyvoice"
               span.prespace github
+
+flash-message

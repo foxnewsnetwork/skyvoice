@@ -2,5 +2,6 @@
 
 RoomRoute = Ember.Route.extend
   model: (params) ->
+    
 
 `export default RoomRoute`
