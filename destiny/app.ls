@@ -53,13 +53,36 @@ class SuperDuperIOMessage
   _internal-count = 0
   @count = -> _internal-count += 1
 
+class SocketCacheMap
+  @extract-version = (obj) ->
+    obj and obj.header and obj.header._iotimestamp
+  @extract-key = (obj) -> 
+    [obj.header.modelName, obj.header.uniqueId].join(":")
+  -> 
+    @cache = {}
+  everything: -> for key, data of @cache then -> data
+  store: (obj) -> @updativeSet SocketCacheMap.extract-key(obj), obj
+  updativeSet: (key, obj) -> 
+    @cache[key] = obj if @upgrade-not-downgrade key, obj
+  upgrade-not-downgrade: (key, obj) ->
+    return true unless @cache[key]?
+    present-version = SocketCacheMap.extract-version @cache[key]
+    possible-future-version = SocketCacheMap.extract-version obj
+    present-version < possible-future-version
+
+SocketCacheMap.instance = new SocketCacheMap()
+
 (socket) <- io.on "connection"
 socket.on "data", (slug) ->
   slug.header._iotimestamp = SuperDuperIOMessage.count!
+  SocketCacheMap.instance.store slug
   if slug.header and slug.header.room
     socket.to(slug.header.room).emit "data", slug
   else
     socket.broadcast.emit "data", slug
+
+for data in SocketCacheMap.instance.everything() 
+  socket.emit "data", data
 
 socket.on "from-client:candidate", (candidate) ->
   console.log "candidate"

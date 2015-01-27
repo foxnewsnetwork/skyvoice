@@ -8,6 +8,14 @@ initialize = (ctn, app) ->
   LS.Initializers.SyncProxifier.initialize ctn, app
   LS.Initializers.SyncArrayifier.initialize ctn, app
 
+  app.inject "route", "syncPx", "ls:sp"
+  app.inject "controller", "syncPx", "ls:sp"
+  app.inject "component", "syncPx", "ls:sp"
+
+  app.inject "route", "syncSa", "ls:sa"
+  app.inject "controller", "syncSa", "ls:sa"
+  app.inject "component", "syncSa", "ls:sa"
+
 LiveSourceInitializer =
   name: 'live-source'
   initialize: initialize

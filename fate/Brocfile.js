@@ -27,6 +27,7 @@ app.import('bower_components/jquery/dist/jquery.js');
 app.import('bower_components/jquery-ui/ui/effect.js');
 app.import('bower_components/jquery-ui/ui/effect-puff.js');
 app.import('bower_components/jquery-ui/ui/effect-explode.js');
+app.import('bower_components/firebase/firebase-debug.js');
 app.import("vendor/youtube/iframe-api.js", {
   exports: {
     "YT": ["YT"]

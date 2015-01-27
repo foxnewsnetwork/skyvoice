@@ -12,7 +12,7 @@
                 .icons
                   i.fa.fa-microphone
                 .username
-                  span.fa= person.username
+                  span.fa= person
       .col-lg-2.col-md-3.hidden-sm.hidden-xs.left-divider
         .players-and-song-queue
           .queue-section

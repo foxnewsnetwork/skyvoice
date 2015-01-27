@@ -1,8 +1,6 @@
-`import DS from 'ember-data'`
+`import Ember from 'ember'`
 
-Room = DS.Model.extend
-  roomName: DS.attr "string"
-  description: DS.attr "string"
-  permalink: DS.attr "string"
+Room = Ember.Object.extend
+  typeKey: 'room'
 
 `export default Room`

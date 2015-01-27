@@ -9,12 +9,7 @@ VesselHanger = Ember.Object.extend
     @hangerId = incrementHangerNumber()
   
   find: (modelName, id) ->
-    v = @findById(modelName, id)
-    if v
-      console.log "found - #{modelName}:#{id}"
-    else
-      console.log "unable to find - #{modelName}:#{id}"
-    v
+    @findById(modelName, id)
 
   dock: (syncModel, modelName, id) ->
     throw new HangerCollisonError "#{modelName}:#{id}" if @instanceStore.get("#{modelName}:#{id}")

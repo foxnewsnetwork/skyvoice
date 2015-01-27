@@ -30,7 +30,7 @@ SyncArray = Ember.ArrayProxy.extend Ember.Observable,
     if dontRemoteRemove
       @_super obj
     else
-      @stargate.callUp @, "removeObject", obj, true
+      @stargate.beamUp @, "content", @get("content").reject( (x) -> x is obj )
 
   toArray: -> 
     @get "content"

@@ -10,6 +10,10 @@ properUrlProcess = Arrows.id
   .compose(joinStrings)
   .compose(finalEncodeUrl)
 
+decideFireMethod = Arrows.lift (data) ->
+  return "push" if data.body.key is "pushObject"
+  "set"
+
 FirebaseIO = Ember.Object.extend
   firedomain: "https://radiant-heat-7074.firebaseio.com/"
 
@@ -27,13 +31,15 @@ FirebaseIO = Ember.Object.extend
     assertExistence @Firebase
     firebase = @get("firebaseGenerator").makeFor(name)
     assertCorrectness firebase
-    firebase.on name, callback
+    firebase.on callback
     
   emit: (name, data) ->
     assertExistence @Firebase
     firebase = @get("firebaseGenerator").makeFor(name)
     assertCorrectness firebase
-    firebase.set name, @timestampHeader data
+    method = decideFireMethod.run data
+    console.log firebase if Ember.isBlank firebase[method]
+    firebase[method] @timestampHeader data
 
   timestampHeader: (data) ->
     data.header._iotimestamp = @Firebase.ServerValue.TIMESTAMP
@@ -70,5 +76,6 @@ assertCorrectness = (firebase) ->
   assertExistence firebase
   throw new BadFirebaseError(firebase, "set") if Ember.isBlank firebase.set
   throw new BadFirebaseError(firebase, "on") if Ember.isBlank firebase.on
+  throw new BadFirebaseError(firebase, "push") if Ember.isBlank firebase.push
 
 `export default FirebaseIO`

@@ -40,8 +40,6 @@ class ExtractionProcessMaker
     decideCallType
       .compose(updateViaFunCall.fork updateViaObjectSet)
       .rescueFrom (error, arg) -> 
-        console.log error.name
-        console.log error.stack
 
 class StaleModelError extends Error
   constructor: (model, version) ->

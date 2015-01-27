@@ -1,5 +1,5 @@
 `import Ember from 'ember'`
-`import FunEx from '../utils/fun-ex'`
+`import FunEx from 'fate/utils/fun-ex'`
 
 Flash = Ember.Object.extend
   flashStack: []

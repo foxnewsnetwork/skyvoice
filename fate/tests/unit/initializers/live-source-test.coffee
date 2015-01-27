@@ -104,3 +104,23 @@ test "two objects initialized at different times should still share the same dat
           equal ed.get("fullName"), "Major Edward Norton OBE"
           start()
           resolve()
+
+test "given two arrays initialized at different times, they should still have the same data", ->
+  stop()
+  Ember.run ->
+    px1 = ctn1.lookup "ls:sa"
+    alaskanHuskies = px1.enliven [], "dogsRneat"
+    alaskanHuskies.pushObject "rover"
+    px2 = ctn2.lookup "ls:sa"
+    new Ember.RSVP.Promise (resolve) ->
+      wait 300, ->
+        dogs = px2.enliven [], "dogsRneat"
+        dogs.pushObject "spot"
+        resolve dogs
+    .then (siberianHuskies) ->
+      new Ember.RSVP.Promise (resolve) ->
+        wait 150, ->
+          equal siberianHuskies.toArray(), ["rover", "spot"].toString()
+          equal alaskanHuskies.toArray(), ["rover", "spot"].toString()
+          start()
+          resolve()
