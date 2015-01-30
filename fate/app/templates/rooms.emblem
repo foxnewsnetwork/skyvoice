@@ -14,37 +14,4 @@
               button.btn.btn-success type="submit"
                 span.prespace search
 
-  .container-fluid.live-tile-cards
-    .row
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        link-to "room.show" 1 class="room-card red"
-          h4.card-title 4chan/a/
-          p.description ani-songs and jpop
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.pink
-          h4.card-title reddit anime
-          p.description ani-songs and jpop
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.purple
-          h4.card-title fit
-          p.description power ballads
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.deep-purple
-          h4.card-title jay chou
-          p.description chinese songs
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.indigo
-          h4.card-title snsd
-          p.description girls generation kpop
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.teal
-          h4.card-title eminem
-          p.description gangster rap
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.cyan
-          h4.card-title ramnstein
-          p.description german death metal
-      .col-xs-6.col-sm-4.col-md-3.col-lg-2
-        .room-card.green
-          h4.card-title nightwish
-          p.description finnish symphonic metal
+  == outlet

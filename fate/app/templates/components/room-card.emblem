@@ -1,0 +1,6 @@
+link-to "room.show" room.id class=roomCardClass
+  h4.card-title= room.title
+  p.description= room.description
+.population 
+  span.label.colon pop
+  span= population

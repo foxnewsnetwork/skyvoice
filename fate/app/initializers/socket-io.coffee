@@ -1,5 +1,5 @@
 # Takes two parameters: container and app
-`import socket from '../utils/socket'`
+`import socket from 'fate/utils/socket'`
 IO = Ember.Object.extend
   room: []
   socket: socket
