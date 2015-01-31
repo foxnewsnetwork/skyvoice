@@ -5,6 +5,10 @@
 RoomController = Ember.Controller.extend
   songErrors: null
 
+  isSinging: -> 
+  isListening: -> 
+  isBroadcasting: -> 
+
   room: FunEx.computed "model", ->
     @get "model"
   
@@ -13,7 +17,9 @@ RoomController = Ember.Controller.extend
 
   attemptQueuePush: (url) ->
     if vid = youtubeVideoidReader.run url
-      song = @store.createRecord "song", permalink: vid
+      song = @store.createRecord "song", 
+        permalink: vid
+        requestingPeer: @session.get("me")
       song.save()
       @get("room.songs").addObject song
       @store.getFireRef(@get("room"), "songs", song.get "id").onDisconnect().remove()

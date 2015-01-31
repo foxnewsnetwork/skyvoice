@@ -13,5 +13,8 @@ Room = DS.Model.extend
   population: FunEx.computed "peers.length", ->
     @get "peers.length"
 
+  leadSinger: FunEx.computed "nowPlayingSong.requestingPeer", ->
+    @get "nowPlayingSong.requestingPeer" 
+
   
 `export default Room`

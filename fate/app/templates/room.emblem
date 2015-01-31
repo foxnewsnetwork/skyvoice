@@ -33,3 +33,11 @@
                 span.prespace= song.permalink
                 span.click-to-kill
                   i.fa.fa-ban
+
+.audio-media-anchors
+  if isSinging
+    media-microphone stream=myVoice
+  if isListening
+    audio-proxy stream=leadVoice
+  if isBroadcasting
+    stream-launcher room=room stream=myVoice

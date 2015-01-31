@@ -8,6 +8,6 @@ StreamLauncherComponent = Ember.Component.extend
   pipeStreamToRemote: FunEx.observed "stream", ->
     return if Ember.isBlank @get "stream"
     # HalfPipeLocal.uploadStream @get "stream"
-    SeaPort.uploadStream "room:donkey", @get "stream"
+    SeaPort.uploadStream @get("room"), @get "stream"
 
 `export default StreamLauncherComponent`
