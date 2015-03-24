@@ -1,0 +1,58 @@
+.room-card-box {
+  .population {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    color: #ccc;
+    font-size: 0.85rem;
+  }
+  .room-card {
+    color: #eee;
+    min-height: 175px;
+    margin-bottom: 30px;
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    @include box-shadow(#111 0 2.5px 5px);
+    &:hover {
+      @include box-shadow(#111 2.5px 5px 10px);
+    }
+  }
+  .red {
+    background-color: #B71C1C;
+  }
+  .pink {
+    background-color: #880E4F;
+  }
+  .purple {
+    background-color: #4A148C;
+  }
+  .deep-purple {
+    background-color: #311B92;
+  }
+  .indigo {
+    background-color: #1A237E;
+  }
+  .blue {
+    background-color: #0D47A1;
+  }
+  .cyan {
+    background-color: #006064;
+  }
+  .teal {
+    background-color: #004D40;
+  }
+  .green {
+    background-color: #1B5E20;
+  }
+  .deep-orange {
+    background-color: #BF360C;
+  }
+  .black {
+    background-color: #333;
+  }
+  .rounded {
+    @include border-radius(30px);
+  }
+}

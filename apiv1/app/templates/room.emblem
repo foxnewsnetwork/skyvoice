@@ -1,0 +1,47 @@
+#templates-room-show
+  .container-fluid
+    .row
+      .col-lg-10.col-md-9.col-sm-12.col-xs-12      
+        .row
+          .col-xs-12
+            #youtube-iframe 
+        .row.people-in-room
+          each peer in room.peers
+            .col-xs-4.col-sm-3.col-md-2.col-lg-2
+              .person
+                .icons
+                  i.fa.fa-microphone
+                .username
+                  span.fa= peer.username
+      .col-lg-2.col-md-3.hidden-sm.hidden-xs.left-divider
+        .players-and-song-queue
+          .queue-section
+            form-for submit="queueSong" errors=songErrors
+              label.sr-only for="queue"
+                span queue song
+              .input-group.input-section attr-name="youtubeurl"
+                .input-group-btn
+                == input type="text" class="form-control" placeholder="http://youtu.be/ZSS5dEeMX64" name="youtubeurl"
+                .input-group-btn
+                  button.btn.btn-success type="submit"
+                    i.fa.fa-play
+          
+          .song-in-queue
+            each song in songQueue
+              .song
+                i.fa.fa-music
+                span.prespace= song.permalink
+                span.click-to-kill
+                  i.fa.fa-ban
+
+.audio-media-anchors
+  if isBroadcasting
+    media-camera stream=myFace
+    each peer in room.peers
+      outbound-pipe destination=peer stream=myFace
+    = log "isBroadcasting"
+  if isListening
+    inbound-pipe origination=leadSinger stream=hisFace
+    .debug-visualizer
+      video-proxy stream=hisFace
+    = log "isListening"

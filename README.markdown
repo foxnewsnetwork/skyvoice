@@ -3,6 +3,10 @@ Skyvoice
 
 Where I experiment with and build a karaoke site
 
+## Something to note
+
+You can't ember serve unless you bundle install first due to compass dependencies on Ruby
+
 ## To develop
 Start in the skyvoice directory
 

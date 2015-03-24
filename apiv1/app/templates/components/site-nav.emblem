@@ -1,0 +1,12 @@
+.container-fluid
+  .navbar-header
+    link-to "index" class="navbar-brand" 
+      span.navbar-logo Open Karaoke
+  .collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-right
+      li
+        link-to "rooms.index"
+          span.navlink rooms
+      li
+        link-to "records.index"
+          span.navlink search records

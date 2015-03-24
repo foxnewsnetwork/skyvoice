@@ -3,10 +3,7 @@
 Peer = DS.Model.extend
   username: DS.attr "string"
   room: DS.belongsTo "room", async: true
-  candidates: DS.hasMany "candidate", async: true
-  description: DS.attr "string"
-  offer: DS.attr "string"
-  answer: DS.attr "string"
+  outpipes: DS.hasMany "pipeline", async: true
 
   firecalls:
     onDisconnect: (ref) ->

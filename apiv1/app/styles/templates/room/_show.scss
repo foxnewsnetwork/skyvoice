@@ -1,0 +1,99 @@
+#templates-room-show {
+  margin-top: 7rem;
+  @include keyframes(shakey-shake) {
+    0% { @include transform( translate(2px, 1px) rotate(0deg) ); }
+    10% { @include transform( translate(-1px, -2px) rotate(-1deg) ); }
+    20% { @include transform( translate(-3px, 0px) rotate(1deg) ); }
+    30% { @include transform( translate(0px, 2px) rotate(0deg) ); }
+    40% { @include transform( translate(1px, -1px) rotate(1deg) ); }
+    50% { @include transform( translate(-1px, 2px) rotate(-1deg) ); }
+    60% { @include transform( translate(-3px, 1px) rotate(0deg) ); }
+    70% { @include transform( translate(2px, 1px) rotate(-1deg) ); }
+    80% { @include transform( translate(-1px, -1px) rotate(1deg) ); }
+    90% { @include transform( translate(2px, 2px) rotate(0deg) ); }
+    100% { @include transform( translate(1px, -2px) rotate(-1deg) ); }
+  }
+  small.error {
+    display: none;
+  }
+  .error {
+    @include animation-name(shakey-shake);
+    @include animation-duration(0.5s);
+    @include transform-origin(50% 50%);
+    @include animation-iteration-count(2);
+    @include animation-timing-function(linear);
+    border: 1px solid #B71C1C;
+  }
+  .video-proxy video {
+    width: 100%;
+    height: 100%;
+  }
+  .vjs-control-bar {
+    display: none;
+  }
+  .no-video-loaded {
+    background: {
+      image: url("video.png");
+      size: contain;
+      repeat: no-repeat;
+      position: center center;
+    }
+    width: 100%;
+    height: 425px;
+  }
+  .left-divider {
+    border-left: 3px solid #333;
+  }
+  .players-and-song-queue {
+    height: 925px;
+  }
+  .queue-section {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #333;
+  }
+  .song {
+    color: #ddd;
+    padding-top: 1.5rem;
+    &:first-child {
+      @include animation-name(colorful-text);
+      @include animation-duration(4s);
+      @include animation-timing-function(ease-out);
+      @include animation-direction(alternate);
+      @include animation-iteration-count(infinite);
+    }
+  }
+  .person {
+    @include display-flex;
+    @include justify-content(center);
+    @include flex-direction(column);
+    cursor: pointer;
+    margin-top: 15px;
+    color: #333;
+    height: 150px;
+    background: {
+      color: #eee;
+    }
+    text-align: center;
+    @include border-radius(5px);
+    @include box-shadow(#111 0 5px 5px);
+  }
+  .username {
+    font-size: 1rem;
+  }
+  .icons {
+    font-size: 3rem;
+    padding-bottom: 1.5rem;
+  }
+  .click-to-kill,
+  .click-to-listen {
+    float: right;
+    cursor: pointer;
+  }
+  @include keyframes(colorful-text) {
+    0% { color: #ddd; }
+    25% { color: #f0ad4e; }
+    50% { color: #449d44; }
+    75% { color: #31b0d5; }
+    100% { color: #c9302c; }
+  }
+}

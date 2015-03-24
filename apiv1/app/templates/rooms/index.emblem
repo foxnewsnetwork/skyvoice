@@ -1,0 +1,11 @@
+.container-fluid.live-tile-cards
+  .row
+    each room in model
+      room-card room=room
+
+    .col-xs-6.col-sm-4.col-md-3.col-lg-2.room-card-box
+      .room-card.black.pointer.rounded click="makeNewRoom"
+        h4.card-title
+          i.fa.fa-plus-circle
+          span.capitalize.fa new room
+        p.description start a new room

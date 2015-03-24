@@ -1,0 +1,102 @@
+#hero-splash
+  hero-splash
+    .container
+      .row
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+          h3.site-title Open Karaoke
+          h4.site-tagline sing with strangers
+        .col-lg-6.col-md-6.col-sm-12.col-xs-12
+          img src="assets/microphone.png"
+
+#rooms
+  .container
+    .row
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        .list-group.top-rooms
+          .list-group-item.active-room
+            span.bold.colon.capitalize room
+            span.prespace pokemon
+            span.right-number 8
+          .list-group-item
+            span.bold.colon.capitalize room
+            span.prespace anime
+            span.right-number 4
+          .list-group-item
+            span.bold.colon.capitalize room
+            span.prespace taylor swift
+            span.right-number 44
+          .list-group-item
+            span.bold.colon.capitalize room
+            span.prespace jay chou
+            span.right-number 74
+        link-to "rooms.index" class="btn btn-primary button-pointer-rounded"
+          span.capitalize all rooms
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.hidden-sm.hidden-xs
+        video-proxy class="thumbnail" src="assets/doge.webm"
+
+#howto
+  .container
+    .row.howto-section
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        h2.section-title
+          span.bold.dash.capitalize step one
+          span.prespace join a room
+        p.instructions find your favorite theme room
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        img.thumbnail.section-sample src="http://192.168.0.101/video.cgi"
+
+    .row.howto-section
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        img.thumbnail.section-sample src="assets/malamute.jpg"
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        h2.section-title
+          span.bold.dash.capitalize step two
+          span.prespace queue a song
+        p.instructions link to your favorite YouTube video and start singing. There is no waiting because you're online.
+
+    .row.howto-section
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        h2.section-title
+          span.bold.dash.capitalize step two alt
+          span.prespace listen to the singer
+        p.instructions listen live to some anonymous stranger sing poorly and butcher your favorite song in an awful off-key voice.
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        img.thumbnail.section-sample src="assets/malamute.jpg"
+
+    .row.howto-section
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        img.thumbnail.section-sample src="assets/malamute.jpg"
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12
+        h2.section-title
+          span.bold.dash.capitalize step three
+          span.prespace share your voice
+        p.instructions your singing will be uploaded to youtube and the a cappella record will be freely downable so the world can forever know your shame.
+
+#about
+  .container-fluid
+    .row
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.border-shadow
+        .about-card
+          .card-pic
+            img.img-thumbnail src="assets/Bernese_Mountain_Dogs_trio.jpg"
+          h3.card-title what is this?
+          p.explanation a web-based streaming audio and video karaoke site
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.border-shadow
+        .about-card
+          .card-pic
+            img.img-thumbnail src="assets/Bernese_Mountain_Dogs_trio.jpg"
+          h3.card-title why? what's the point?
+          p.explanation Do you like karaoke? Is singing with friends fun? Are you Asian? If you answer yes to any of the before questions, then.
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.border-shadow
+        .about-card
+          .card-pic
+            img.img-thumbnail src="assets/Bernese_Mountain_Dogs_trio.jpg"
+          h3.card-title how is it done?
+          p.explanation this is built on a front stack of emberjs, videojs, bootstrap, compass, and webrtc, and a back end of nodejs, ruby on rails, and google's stun servers.
+      .col-lg-6.col-md-6.col-sm-12.col-xs-12.border-shadow
+        .about-card
+          .card-pic
+            img.img-thumbnail src="assets/Bernese_Mountain_Dogs_trio.jpg"
+          h3.card-title who is the dork that build this?
+          p.explanation @foxnewsnetwork (Thomas Chen) started this project because he enjoys karaoke despite an awful off-key voice that sounds like corn-crake.
+          

@@ -1,0 +1,40 @@
+.flash-message {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  margin-left: 20px;
+  width: 95%;
+  .flash-slice {
+    @include display-flex;
+    @include justify-content(space-between);
+    @include flex-direction(row);
+    margin-bottom: 5px;
+    background-color: #fd7;
+    border: 1px solid darken(#fd7, 25%);
+    font-weight: bold;    
+    &.notice {
+      border: 1px solid darken(#008cba, 15%);
+      background-color: #008cba;
+      color: #ddd;
+      
+    }
+    &.warning {
+      border: 1px solid darken(red, 15%);
+      background-color: #cb4112;
+      color: #ddd;
+      
+    }
+    &.success {
+      border: 1px solid darken(#43ac6a, 15%);
+      background-color: #43ac6a;
+      color: #ddd;
+    }
+  }
+  .message {
+    @include flex-grow(5);
+  }
+  .action,
+  .message {
+    padding: 15px;
+  }
+}
